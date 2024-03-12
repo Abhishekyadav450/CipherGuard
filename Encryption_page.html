@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+    <link rel="stylesheet" href="Encryption_css.css" >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Teko&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/97397352ad.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    
+    <!-- Here we are getting the Footer images -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<body>
+    <center>
+    <div class="heading_enc">
+        <h1 id="header1">Encryption</h1>
+    </div>
+    </center>
+    <center>
+    <div class="container_encry">
+        <div class="text_cont">
+            <label id="text">Text</label>
+            <input id="text_input" type="text" placeholder="Enter a text!"><br></br>
+        </div>
+        <div class="key_cont">
+            <label id="key">Key</label>
+            <input id="keys" type="text" placeholder="Enter in number[0-45]"><br></br>
+        </div>
+        <div class="button_generate_clear">
+            <button onclick="get_info()"  class="glow-on-hover" id="generate">Generate ⚙</button>
+            <button onclick="clear_encry()" class="glow-on-hover" id="clear">Clear 🗑</button>
+        </div>
+        <div class="encrypted">
+            <label id="encrypted_txt">Encrypted Text</label>
+           <!-- <input type="text"  id="encrypt_1"><br></br>-->
+            <p id="encrypted_input"></p>
+            
+        </div>
+    </div>  
+    </center>  
+    <center>  
+    <div class="button_home">
+            <button onclick="window.location.href='Decryption_page.html';"id="home_btn">⬅Decription</button>
+    </div>
+    </center>  
+    <footer>
+        <center>
+        <div class="footer-container">
+       <h3>  
+        Hope it is doing best ☺ :> if any bugs Contanct 
+       </h3>
+      
+        </div>
+      
+        
+    </footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+        import { getDatabase , ref, set } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js";
+        import {  getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC7LDr35050odGjL650IkywbgANvpntjII",
+          authDomain: "encryptiononwebsite.firebaseapp.com",
+          databaseURL: "https://encryptiononwebsite-default-rtdb.firebaseio.com",
+          projectId: "encryptiononwebsite",
+          storageBucket: "encryptiononwebsite.appspot.com",
+          messagingSenderId: "296077324273",
+          appId: "1:296077324273:web:623acbd9f4c77fb2885e50"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const auth = getAuth(app);
+
+        var emai_name = sessionStorage.getItem("email_name")
+        console.log("printing e_username if we get")
+        console.log(emai_name)
+
+        document.getElementById("generate").addEventListener('click',function writeUserData(text,key,encrypted){
+
+            var text1 = document.getElementById("text_input").value
+            var key1 = document.getElementById("keys").value
+            var encrypted1 = document.getElementById("encrypted_input").value //anyway it is wate of importing!
+            console.log(encrypted1)
+         
+
+            set(ref(db,'users/'+ emai_name +'/history-Enc-'+ text1),{
+                Text_encry:text1,
+                key_encry:key1,
+            })
+
+
+
+        })
+
+
+
+
+
+    </script>
+    
+    <script src="Encryption_js.js"> </script>
+
+</body>
+</html>

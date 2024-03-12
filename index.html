@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherGuard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Teko&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Context_css.css" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <script src="https://kit.fontawesome.com/97397352ad.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <center>  
+    <center>
+    <div class="heading">
+        <h1 class="headertxt">CipherGuard</h1>
+        <h5 class="headertxt">Encryption | Decryption</h5>
+    </div>
+    </center>
+    <center>
+    <div class="info">
+        <center>
+        <a href="#" class="button1">hello <span id="usr">User</span>!,click on the opertation that u have to perform!</a>
+        </center>
+    </div>
+    </center>
+    <center>
+    <div class="container">
+       <center>
+        <button  onclick="encryption()"class="glow-on-hover" id='Encryption'>Encryption</button>
+        
+        
+        <button  onclick="decryption()" class="glow-on-hover" id='Decryption'>Decryption</button>
+        </center>
+    </div>
+    </center>
+    <footer>
+        <center>
+        <div class="footer-container">
+             <!-- adding popup for user to how to use this  -->
+       <div class="popup" id="popup-1">
+        <div class="overlay">
+            <div class="content">
+                <div class="close-btn" onclick="togglepopup()">&times;</div>
+                <h1>How to use!</h1>
+                <p>1.This website is used to Encrypt your passwords,email or anyother texts.<br></br>
+                 2.Click on the Encryption, Make your text or password to be Encrypted by giving a key to it.<br></br>
+                 3.The Encrypted text can be Decrypted By using this Decryption,by entering a Encrypted TexT and a fine 
+                 working key🔑.
+             </p>
+            </div>
+        </div>
+    </div>
+    <button id="popup-btn" onclick="togglepopup()">How<i class="fas fa-question-circle"></i></button>
+</center>
+       <h3>  
+        Hope it is doing best :> if any bugs Contanct 
+       </h3>
+      
+   
+       
+        </div>
+       
+        
+    </footer>
+    </center>
+    <script src="Content_page.js">  </script>
+    
+</body>
+</html>
